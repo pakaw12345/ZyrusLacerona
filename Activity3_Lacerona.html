@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My JS Practice (Single File)</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #121212; 
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        button {
+            padding: 12px 24px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            background-color: #007BFF; 
+            color: white;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #28a745; 
+            transform: translateY(-2px); 
+        }
+
+        button:active {
+            transform: translateY(2px); 
+        }
+
+        input {
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: 2px solid #444;
+            margin-top: 10px;
+            width: 300px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #007BFF; 
+            outline: none;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.5;
+            margin-top: 20px;
+        }
+
+        #hoverText {
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        #hoverText:hover {
+            color: #FF5733; 
+        }
+    </style>
+</head>
+<body>
+    <button id="alertBtn">ALERT BUTTON!</button>
+    <br><br>
+
+    <input type="text" id="userInput" placeholder="Type something">
+    <button id="showBtn">Show Input</button>
+    <p id="output"></p>
+    <br>
+
+    <p id="hoverText">Hover over me!</p>
+
+    <script>
+        document.getElementById("alertBtn").onclick = function () {
+            alert("Ako, Budoy!");
+        };
+
+        document.getElementById("showBtn").onclick = function () {
+            let text = document.getElementById("userInput").value;
+            document.getElementById("output").innerText = text;
+        };
+
+        document.getElementById("hoverText").onmouseover = function () {
+            this.style.color = "blue";
+        };
+        document.getElementById("hoverText").onmouseout = function () {
+            this.style.color = "green"; 
+        };
+    </script>
+</body>
+</html>
